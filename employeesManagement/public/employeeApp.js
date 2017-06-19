@@ -16,7 +16,7 @@ app.config(function ($routeProvider) {
         templateUrl: '/partials/main.html'
     })
 	.when('/confirm', {
-	    controller: '',
+	    controller: 'confirmController',
         templateUrl: '/partials/confirm.html'
     });;
 
@@ -48,26 +48,44 @@ app.factory('Data', function() {
    }
 });
 
+app.factory('ShareDataService', function() {
+    return {};
+});
 app.controller('customersController', function($scope, Data) {   
 		$scope.employees = Data.employees;
 			
 });
 
-app.controller('newController', function($scope,$location, Data) {
+app.controller('newController', function($scope,$location, Data,ShareDataService) {
     $scope.employees = Data.employees;
-	
+	if(ShareDataService.info){
+		$scope.newName = ShareDataService.info.name;
+		$scope.newSkill = ShareDataService.info.skill;
+	}
 	$scope.addUser = function(){
      	 $scope.newEmp = {
 			"name": $scope.newName,
 			"class": $scope.newSkill
 	      };
+	  ShareDataService.info= null;  
 	  $scope.employees.push($scope.newEmp);
 	   $location.path("/");
 	}
-	
+	$scope.confirm = function(){
+	   ShareDataService.info = {
+		   "name": $scope.newName,
+		   "skill": $scope.newSkill
+	   }
+	   $location.path("/confirm");
+	}
 });
-
-
+app.controller('confirmController', function($scope,$location,ShareDataService) {
+	$scope.name = ShareDataService.info.name;
+	$scope.skill = ShareDataService.info.skill;
+	$scope.cancel = function(){
+		$location.path("/edit");
+	}
+});
 /*
 function customersController($scope,$http) {
     $http.get('dummy_data.json')
