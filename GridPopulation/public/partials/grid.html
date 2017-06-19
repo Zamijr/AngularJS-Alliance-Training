@@ -1,0 +1,17 @@
+<div ng-controller="gridController">
+    <h2>Grid----------<a href="#chart"> Go to Chart Population</a></h2>
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tbody>
+            <tr ng-repeat="country in countries">
+            <td>{{ country.name }}</td>
+            <td>{{ country.population }}</td>
+            </tr>
+    </tbody>
+    </table>
+</div>

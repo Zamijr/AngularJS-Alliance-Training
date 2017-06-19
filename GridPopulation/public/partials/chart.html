@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TechRepublic.com – HTML Canvas example</title>
+<script type="text/javascript" src="Chart.js"></script>
+<script type="text/javascript">
+function createCanvas() {
+var cvs = document.getElementById('exampleCanvas');
+var ctx = cvs.getContext('2d');
+ctext.fillStyle = '#000';
+ctext.fillRect(0, 0, 300, 300);
+ctext.fillStyle = '#fff';
+ctext.font = 'bold 20px sans-serif';
+ctext.fillText('TechRepublic.com Rules!', 20, 50);
+}
+</script></head>
+<body onload="createCanvas();">
+<canvas id="exampleCanvas" width="300" height="300"></canvas>
+</body></html>

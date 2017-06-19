@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+</head>
+
+<body ng-app="employeeApp">
+<div class="container">
+	<h1 align="center">IT Employees Management</h1>
+	<br><br>
+	<!--<h3>Students</h3> -->
+		
+	<br><br>
+	<p><input type="text" ng-model="name">
+	<span class="glyphicon glyphicon-search"></span> Filter Results
+	</input>
+	
+	</p>
+	
+	<div ng-view></div> 		
+
+</div> <!-- Container div ends-->
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+<script type="text/javascript" src="Chart.js"></script>
+<script type="text/javascript" src="tc-angular-chartjs.js"></script>
+<script src= "employeeApp.js"></script>
+</body>
+</html>

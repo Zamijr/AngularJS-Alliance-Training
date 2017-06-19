@@ -1,0 +1,59 @@
+{ "employees":[
+	{
+	  "name":"Raj",
+	   "age": 31,
+	   "class":"JQuery, AngularJS",
+	   "address":"1234 Stevens street, San Jose, CA"
+	}
+	,
+	{
+	  "name":"John Smith",
+	   "age": 22,
+	   "class":"Java, SQL, AngularJS",
+	   "address":"4444 Fremont street, Fremont, CA"
+	}
+	,
+	{
+	  "name":"Mike Sullivan",
+	   "age": 22,
+	   "class":"C++",
+	   "address":"22 ABC street, Santa Clara, CA"
+	}
+	,
+	{
+	  "name":"Daisy",
+	   "age": 26,
+	   "class":"JAVA, SQL, AngularJS",
+	   "address":"21212 london street, San Jose, CA"
+	}
+	,
+	{
+	  "name":"Mr Kumar",
+	   "age": 23,
+	   "class":"JAVA, SQL",
+	   "address":"21212 london street, San Jose, CA"
+	}
+		,
+	{
+	  "name":"Mike Smith",
+	   "age": 28,
+	   "class":"C++, AngularJS, HTML5, CSS3",
+	   "address":"22 will wood street, Santa Clara, CA"
+	}
+	,
+	{
+	  "name":"Shiv Kumar",
+	   "age": 26,
+	   "class":"HTML5, CSS3",
+	   "address":"21212 Woodland lane, San Jose, CA"
+	}
+	,
+	{
+	  "name":"XYZ",
+	   "age": 26,
+	   "class":"JAVA, SQL,HTML5, CSS3",
+	   "address":"111 wood street, San Jose, CA"
+	}
+	
+]
+}
