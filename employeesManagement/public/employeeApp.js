@@ -69,7 +69,7 @@ app.controller('newController', function($scope,$location, Data,ShareDataService
 	      };
 	  ShareDataService.info= null;  
 	  $scope.employees.push($scope.newEmp);
-	   $location.path("/");
+	  $location.path("/");
 	}
 	$scope.confirm = function(){
 	   ShareDataService.info = {
@@ -79,11 +79,20 @@ app.controller('newController', function($scope,$location, Data,ShareDataService
 	   $location.path("/confirm");
 	}
 });
-app.controller('confirmController', function($scope,$location,ShareDataService) {
+app.controller('confirmController', function($scope,$location,Data,ShareDataService) {
 	$scope.name = ShareDataService.info.name;
 	$scope.skill = ShareDataService.info.skill;
 	$scope.cancel = function(){
 		$location.path("/edit");
+	}
+	$scope.saveInfo = function(){
+		var newEmp = {
+			"name": $scope.name,
+			"class": $scope.skill
+	      };
+		ShareDataService.info= null; 
+		Data.employees.push(newEmp);
+		$location.path("/");
 	}
 });
 /*
