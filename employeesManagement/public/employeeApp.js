@@ -1,6 +1,15 @@
 
 var app = angular.module('employeeApp', ['ngRoute','tc.chartjs']);
 
+app.directive("myTable", function() {
+    return {
+        templateUrl : "partials/table.html"
+    };
+});
+app.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.hashPrefix('');
+}]);
+
 app.config(function ($routeProvider) {
     $routeProvider
 	.when('/', {
@@ -53,11 +62,6 @@ app.factory('ShareDataService', function() {
 });
 app.controller('customersController', function($scope, Data,) {   
 		$scope.employees = Data.employees;			
-});
-app.directive('myT',function(){
-	return {
-		templateUrl: '<p>pp</p>'
-	}
 });
 
 app.controller('newController', function($scope,$location, Data,ShareDataService) {
