@@ -51,9 +51,13 @@ app.factory('Data', function() {
 app.factory('ShareDataService', function() {
     return {};
 });
-app.controller('customersController', function($scope, Data) {   
-		$scope.employees = Data.employees;
-			
+app.controller('customersController', function($scope, Data,) {   
+		$scope.employees = Data.employees;			
+});
+app.directive('myT',function(){
+	return {
+		templateUrl: '<p>pp</p>'
+	}
 });
 
 app.controller('newController', function($scope,$location, Data,ShareDataService) {

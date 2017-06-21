@@ -1,24 +1,2 @@
-	<table class="table table-striped">
-		<thead>
-		<tr>
-		  <th>Name</th>
-		  <th>Skill Set</th>
-		  <th>Address</th>
-		</tr>
-		</thead>
-		<tbody>
-				<tr ng-repeat="emp in employees | filter:name">
-			
-				<td>{{ emp.name | uppercase }}</td>
-				<td>{{ emp.class }}</td>
-				<td>{{ emp.address }}</td>
-				<td>
-				<button class="btn" ng-click="editUser(emp.name)">
-				   <span class="glyphicon glyphicon-pencil"></span>  Edit
-				</button>
-				</td>
-			</tr>
-		</tbody>
-    </table>
-	
+	<my-t></my-t>
 	<a href="#edit"> Add New User </a>
