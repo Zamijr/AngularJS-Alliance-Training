@@ -3,9 +3,29 @@ var app = angular.module('employeeApp', ['ngRoute','tc.chartjs']);
 
 app.directive("myTable", function() {
     return {
-        templateUrl : "partials/table.html"
+        templateUrl : "partials/table.html",
+		scope: {
+			childata: "=employees"
+		}
     };
 });
+
+app.directive("myD3Chart", function() {
+    return  {
+         restrict: 'E',
+         scope: {data: '=chartData'},
+         link: function (scope, element, attrs) {
+           var chart = d3.select(element[0]);
+            chart.append("div").attr("class", "chart")
+             .selectAll('div')
+             .data(scope.data).enter().append("div")
+             .transition().ease("elastic")
+             .style("width", function(d) { return d + "%"; })
+             .text(function(d) { return d + "%"; });
+         } 
+      };
+});
+
 app.config(['$locationProvider', function($locationProvider) {
   $locationProvider.hashPrefix('');
 }]);
@@ -60,11 +80,13 @@ app.factory('Data', function() {
 app.factory('ShareDataService', function() {
     return {};
 });
-app.controller('customersController', function($scope, Data,) {   
-		$scope.employees = Data.employees;			
+app.controller('customersController', function($scope, Data) {   
+		$scope.employees = Data.employees;	
+		$scope.myData = [10,20,30,40,50];		
 });
 
 app.controller('newController', function($scope,$location, Data,ShareDataService) {
+	$scope.myDataEdit = [80,20,50,10,20];
     $scope.employees = Data.employees;
 	if(ShareDataService.info){
 		$scope.newName = ShareDataService.info.name;
